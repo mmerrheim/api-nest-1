@@ -24,10 +24,7 @@ export class ProductService {
     private readonly entityManager: EntityManager,
   ) {}
 
-
   async getAllProducts(paginationDto: PaginationDto) {
-    console.log(paginationDto)
-    console.log('Logging something...');
     const { page, limit } = paginationDto;
     const skip = (page - 1) * limit;
     const totalCount = await this.entityManager.count(Product);

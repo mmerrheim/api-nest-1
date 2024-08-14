@@ -43,4 +43,8 @@ export class ProductDetailsDto {
   @IsString()
   @IsNotEmpty()
   public description: string;
+
+  @IsDefined()
+  @IsNumber()
+  public price: number;
 }

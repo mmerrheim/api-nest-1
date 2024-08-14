@@ -13,7 +13,10 @@ import { UserService } from 'src/api/user/services/user.service';
 
 @Controller('product')
 export class ProductController {
-  constructor(private readonly productService: ProductService, private readonly userService: UserService) { }
+  constructor(
+    private readonly productService: ProductService,
+    private readonly userService: UserService
+  ) { }
 
   @Get(':id')
   async getProduct(@Param() product: FindOneParams) {
@@ -29,6 +32,7 @@ export class ProductController {
       page: page || 1,
       limit: limit || 10,
     };
+
     return this.productService.getAllProducts(paginationDto);
   }
 
@@ -37,10 +41,8 @@ export class ProductController {
     @Body() body: CreateProductDto,
     @CurrentUser() user: User,
   ) {
-    console.log(body);
-    console.log(user)
     const currentUser = await this.userService.findByEmail('test@gmail.com');
-    console.log(currentUser)
+
     if (!currentUser) {
       throw new NotFoundException('User not found');
     }

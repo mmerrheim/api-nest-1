@@ -12,7 +12,7 @@ import { errorMessages } from 'src/errors/custom';
 export class UserService {
   constructor(
     @InjectRepository(User) private readonly repository: Repository<User>,
-  ) {}
+  ) { }
 
   public async createUser(
     body: CreateUserDto,
