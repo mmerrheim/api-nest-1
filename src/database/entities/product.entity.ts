@@ -83,6 +83,11 @@ export class Product {
   @IsNumber()
   public categoryId: number;
 
+  @Column({ type: 'decimal', precision: 10, scale: 2, nullable: true })
+  @IsDefined()
+  @IsNumber()
+  public price: number;
+
   @CreateDateColumn({ type: 'timestamp' })
   public createdAt!: Date;
 

@@ -82,6 +82,7 @@ If you're interested in contributing to this project, please follow these guidel
     "Eco-friendly",
     "Affordable price"
   ],
+  "price": 10.2
   "description": "This is a great product that meets all your needs and expectations.",
   "categoryId": 1
 }
